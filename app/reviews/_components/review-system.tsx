@@ -110,7 +110,7 @@ export default function ReviewSystem() {
     }
   }
 
-  const StarRating = ({ rating, setRating }) => (
+  const StarRating = ({ rating, setRating }: { rating: number; setRating: (rating: number) => void }) => (
     <div className="flex justify-center mt-2">
       {[1, 2, 3, 4, 5].map((star) => (
         <Button
@@ -151,7 +151,7 @@ export default function ReviewSystem() {
                 <SelectValue placeholder="Select item" />
               </SelectTrigger>
               <SelectContent>
-                {availableSegments[segment.type].map((item) => (
+                {(availableSegments[segment.type as keyof typeof availableSegments] || []).map((item) => (
                   <SelectItem key={item} value={item}>{item}</SelectItem>
                 ))}
               </SelectContent>
@@ -159,7 +159,7 @@ export default function ReviewSystem() {
           )}
           {segment.item && (
             <div className="grid grid-cols-2 gap-2 mt-2">
-              {itemCharacteristics[segment.item].map((char) => (
+              {(itemCharacteristics[segment.item as keyof typeof itemCharacteristics] || []).map((char) => (
                 <Button
                   key={char}
                   variant={segment.characteristics.includes(char) ? "default" : "outline"}

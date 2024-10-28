@@ -1,7 +1,14 @@
 import { ratelimitConfig } from "@/lib/ratelimiter";
 import { NextRequest, NextResponse } from "next/server";
 
-export async function GET(req: NextRequest) {
+// Extend the NextRequest type to include the geo property
+interface ExtendedNextRequest extends NextRequest {
+  geo?: {
+    country?: string;
+  };
+}
+
+export async function GET(req: ExtendedNextRequest) {
   if (!ratelimitConfig.enabled || !ratelimitConfig.ratelimit) {
     return NextResponse.json(
       "Environment variable UPSTASH_REDIS_REST_URL is not set.",
@@ -9,7 +16,7 @@ export async function GET(req: NextRequest) {
     );
   }
 
-  const ip = req.ip ?? "127.0.0.1";
+  const ip = req.headers.get('x-forwarded-for')?.split(',')[0] ?? "127.0.0.1";
   const isLocal = process.env.NODE_ENV === "development";
   const country = isLocal ? "CA" : req.geo?.country ?? "unknown";
 
