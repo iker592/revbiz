@@ -15,18 +15,8 @@ import { Dialog, DialogClose } from "@radix-ui/react-dialog";
 
 const components: { title: string; href: string; description: string }[] = [
     {
-        title: "Marketing Page",
-        href: "/marketing-page",
-        description: "Write some wavy here to get them to click.",
-    },
-    {
-        title: "Marketing Page",
-        href: "/marketing-page",
-        description: "Write some wavy here to get them to click.",
-    },
-    {
-        title: "Marketing Page",
-        href: "/marketing-page",
+        title: "Generate Reviews",
+        href: "/reviews",
         description: "Write some wavy here to get them to click.",
     },
 ];
@@ -57,13 +47,13 @@ export default function NavBar() {
                                     <Button variant="outline" className="w-full">Home</Button>
                                 </Link>
                             </DialogClose>
-                            <DialogClose asChild>
+                            {/* <DialogClose asChild>
                                 <Link href="/dashboard" legacyBehavior passHref className="cursor-pointer">
                                     <Button variant="outline">
                                         Dashboard
                                     </Button>
                                 </Link>
-                            </DialogClose>
+                            </DialogClose> */}
                         </div>
                     </SheetContent>
                 </Dialog>
@@ -96,11 +86,11 @@ export default function NavBar() {
                         </NavigationMenuContent>
                     </NavigationMenuItem>
                     <NavigationMenuItem className="max-[825px]:hidden">
-                        <Link href="/dashboard" legacyBehavior passHref>
+                        {/* <Link href="/dashboard" legacyBehavior passHref>
                             <Button variant="ghost">
                                 Dashboard
                             </Button>
-                        </Link>
+                        </Link> */}
                     </NavigationMenuItem>
                 </NavigationMenuList>
             </NavigationMenu>

@@ -8,26 +8,24 @@ import { SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/component
 import { UserProfile } from '@/components/user-profile'
 import config from '@/config'
 import { HamburgerMenuIcon } from '@radix-ui/react-icons'
-import { Banknote, Folder, HomeIcon, Settings } from 'lucide-react'
+import { Banknote, Folder, HomeIcon, Settings, Star } from 'lucide-react'
 import Link from 'next/link'
 import { ReactNode } from 'react'
 
 export default function DashboardTopNav({ children }: { children: ReactNode }) {
   return (
     <div className="flex flex-col">
-      <header className="flex h-14 lg:h-[55px] items-center gap-4 border-b px-3">
+      <header className="flex h-14 lg:h-[60px] items-center gap-4 border-b bg-gray-100/40 px-6 dark:bg-gray-800/40">
         <Dialog>
-          <SheetTrigger className="min-[1024px]:hidden p-2 transition">
-            <HamburgerMenuIcon />
-            <Link href="/dashboard">
-              <span className="sr-only">Home</span>
-            </Link>
+          <SheetTrigger asChild>
+            <Button className="lg:hidden" size="icon" variant="outline">
+              <HamburgerMenuIcon className="h-6 w-6" />
+              <span className="sr-only">Toggle navigation menu</span>
+            </Button>
           </SheetTrigger>
           <SheetContent side="left">
             <SheetHeader>
-              <Link href="/">
-                <SheetTitle>Nextjs Starter Kit</SheetTitle>
-              </Link>
+              <SheetTitle>Navigation</SheetTitle>
             </SheetHeader>
             <div className="flex flex-col space-y-3 mt-[1rem]">
               <DialogClose asChild>
@@ -54,6 +52,14 @@ export default function DashboardTopNav({ children }: { children: ReactNode }) {
                   </Button>
                 </Link>
               </DialogClose>
+              <DialogClose asChild>
+                <Link href="/dashboard/review-system">
+                  <Button variant="outline" className="w-full">
+                    <Star className="mr-2 h-4 w-4" />
+                    Review System
+                  </Button>
+                </Link>
+              </DialogClose>
               <Separator className="my-3" />
               <DialogClose asChild>
                 <Link href="/dashboard/settings">
@@ -66,9 +72,12 @@ export default function DashboardTopNav({ children }: { children: ReactNode }) {
             </div>
           </SheetContent>
         </Dialog>
-        <div className="flex justify-center items-center gap-2 ml-auto">
-          {config?.auth?.enabled && <UserProfile />}
+        <div className="w-full flex-1">
+          <h1 className="font-semibold text-lg md:text-xl">Dashboard</h1>
+        </div>
+        <div className="flex items-center gap-4">
           <ModeToggle />
+          {config?.auth?.enabled && <UserProfile />}
         </div>
       </header>
       {children}

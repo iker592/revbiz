@@ -26,9 +26,9 @@ export default function Footer() {
                         <div className="mt-8 space-y-4 lg:mt-0">
 
                             <div>
-                                <h3 className="text-2xl font-medium">This is a fake newsletter title</h3>
+                                <h3 className="text-2xl font-medium">Subscribe to our newsletter</h3>
                                 <p className="mt-4 max-w-lg  ">
-                                    This is not a real newsletter email input. This is for you to build upon
+                                    No spam, promise! We will email you once a week with the latest reviews and insights.
                                 </p>
                             </div>
                             <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col border rounded-xl p-4 gap-3 mt-6 w-full">
@@ -54,10 +54,10 @@ export default function Footer() {
 
                                 <ul className="mt-6 space-y-4 text-sm">
                                     <li>
-                                        <a href="https://twitter.com/rasmickyy" target="_blank" className="transition hover:opacity-75"> Twitter </a>
+                                        <a href="https://twitter.com/ikercodes" target="_blank" className="transition hover:opacity-75"> Twitter </a>
                                     </li>
                                     <li>
-                                        <a href="https://www.youtube.com/@rasmic" target="_blank" className="  transition hover:opacity-75"> YouTube </a>
+                                        <a href="https://www.youtube.com/@ikercodes" target="_blank" className="  transition hover:opacity-75"> YouTube </a>
                                     </li>
                                 </ul>
                             </div>
@@ -87,7 +87,7 @@ export default function Footer() {
                                 </li>
                             </ul>
 
-                            <p className="mt-8 text-xs  ">&copy; 2024. SomeCompany LLC. All rights reserved.</p>
+                            <p className="mt-8 text-xs  ">&copy; 2024. RevBiz LLC. All rights reserved.</p>
                         </div>
                     </div>
                 </div>
