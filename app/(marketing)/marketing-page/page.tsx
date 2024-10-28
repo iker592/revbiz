@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     title: 'Marketing page',
     description: 'Put description of the page.',
     siteId: "",
-    creator: "@rasmickyy",
+    creator: "@ikercodes",
     creatorId: "",
     images: [''],
   },

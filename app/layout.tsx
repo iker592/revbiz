@@ -10,21 +10,21 @@ import './globals.css'
 export const metadata: Metadata = {
   metadataBase: new URL("https://starter.rasmic.xyz"),
   title: {
-    default: 'Nextjs Starter Kit',
-    template: `%s | Nextjs Starter Kit`
+    default: 'RevBiz',
+    template: `%s | RevBiz`
   },
-  description: 'The Ultimate Nextjs 14 Starter Kit for quickly building your SaaS, giving you time to focus on what really matters',
+  description: 'The ultimate review gathering tool for your business',
   openGraph: {
-    description: 'The Ultimate Nextjs 14 Starter Kit for quickly building your SaaS, giving you time to focus on what really matters',
+    description: 'The ultimate review gathering tool for your business',
     images: ['https://utfs.io/f/8a428f85-ae83-4ca7-9237-6f8b65411293-eun6ii.png'],
     url: 'https://starter.rasmic.xyz/'
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Nextjs Starter Kit',
-    description: 'The Ultimate Nextjs 14 Starter Kit for quickly building your SaaS, giving you time to focus on what really matters',
+    title: 'RevBiz',
+    description: 'The ultimate review gathering tool for your business',
     siteId: "",
-    creator: "@rasmic",
+    creator: "@ikercodes",
     creatorId: "",
     images: ['https://utfs.io/f/8a428f85-ae83-4ca7-9237-6f8b65411293-eun6ii.png'],
   },
